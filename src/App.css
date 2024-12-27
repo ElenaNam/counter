@@ -1,0 +1,84 @@
+.App {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #3b3939;
+}
+
+.container {
+	padding: 0 15px;
+	margin: 0 auto;
+	max-width: 1280px;
+	width: 100%;
+}
+
+.color-red {
+	color: red;
+}
+
+.counter {
+	margin: 0 auto;
+	padding: 15px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	width: 100%;
+	max-width: 200px;
+
+	border-radius: 5px;
+	border: 2px solid rgb(128 200 218);
+}
+
+.counter__screen {
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(128 200 218);
+	border-radius: 5px;
+
+	font-weight: 700;
+	font-size: 32px;
+}
+
+.counter__control {
+	padding: 15px;
+
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+
+	border-radius: 5px;
+	border: 2px solid rgb(128 200 218);
+}
+
+.counter button {
+	padding: 5px 10px;
+	width: 100%;
+
+	background-color: rgb(128 200 218);
+	border-radius: 5px;
+	border: 1px solid rgb(128 200 218);
+
+	font-size: 16px;
+	font-weight: 700;
+
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.counter button:not(:disabled):hover {
+	box-shadow: 1px 1px 5px 1px #6666668c;
+}
+
+.counter button:not(:disabled):active {
+	transform: translate(-.3px, .3px);
+}
+
+.counter button:disabled {
+	opacity: .8;
+	cursor: default;
+}
