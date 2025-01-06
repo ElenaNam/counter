@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { Tablo } from './Tablo';
 
@@ -14,6 +14,18 @@ export const Counter = () => {
 	const resetCounter = () => {
 		setCounter(0);
 	}
+
+	useEffect(() => {
+		let counterAsString = localStorage.getItem('counterValue');
+		if (counterAsString) {
+			let newCounter = JSON.parse(counterAsString);
+			setCounter(newCounter);
+		}
+	}, [])
+
+	useEffect(() => {
+		localStorage.setItem('counterValue', JSON.stringify(counter))
+	}, [counter])
 
 	return (
 		<div className='counter'>
