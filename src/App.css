@@ -1,7 +1,11 @@
+* {
+	box-sizing: border-box;
+}
 .App {
 	padding: 50px 0;
 	height: 100vh;
 	display: flex;
+	justify-content: center;
 	align-items: flex-start;
 	justify-content: center;
 	background-color: #3b3939;
@@ -15,19 +19,22 @@
 }
 
 .color-red {
-	color: red;
+	color: #ff0050 !important;
+}
+
+.btn__wrapper {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
 
 .counter {
-	margin: 0 auto;
 	padding: 15px;
 
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-
-	width: 100%;
-	max-width: 200px;
+	width: 250px;
 
 	border-radius: 5px;
 	border: 2px solid rgb(128 200 218);
@@ -35,14 +42,66 @@
 
 .counter__screen {
 	padding: 15px;
+	height: 85px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: rgb(128 200 218);
 	border-radius: 5px;
+	border: 2px solid rgb(128 200 218);
 
 	font-weight: 700;
-	font-size: 32px;
+	font-size: 40px;
+}
+
+.counter__screen-msg {
+	background-color: transparent;
+	font-size: 14px;
+	font-weight: 700;
+	color: rgb(128 200 218);
+}
+
+.counter__set {
+	padding: 15px;
+	height: 85px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	border-radius: 5px;
+	border: 2px solid rgb(128 200 218);
+}
+
+.counter__formfield {
+	color: rgb(128 200 218);
+}
+
+.counter__formfield label {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;	
+	white-space: nowrap;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.counter__formfield input {
+	padding: 3px 1px 3px 5px;
+	width: 100%;
+	max-width: 70px;
+	border-radius: 5px;
+	border: 2px solid rgb(128 200 218);
+	font-size: 12px;
+	line-height: 1;
+	transition: .3s;
+}
+
+.counter__formfield input.error {
+	border-color: #ff0074;
+	background-color: #e999b3;
+}
+
+.counter__formfield input:focus {
+	outline: none;
 }
 
 .counter__control {
@@ -58,13 +117,13 @@
 
 .counter button {
 	padding: 5px 10px;
-	width: 100%;
+	width: auto;
 
 	background-color: rgb(128 200 218);
 	border-radius: 5px;
 	border: 1px solid rgb(128 200 218);
 
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: 700;
 
 	cursor: pointer;
@@ -98,4 +157,10 @@
 }
 .progressbar__item-fill {
 	background-color: rgb(128 200 218);
+}
+
+/* MUI*/
+div[role="tabpanel"] {
+	display: flex;
+	justify-content: center;
 }
