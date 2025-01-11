@@ -1,8 +1,7 @@
 .App {
-	padding: 50px 0;
 	height: 100vh;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
 	background-color: #3b3939;
 }
@@ -82,20 +81,4 @@
 .counter button:disabled {
 	opacity: .8;
 	cursor: default;
-}
-
-.progressbar {
-	display: flex;
-	height: 7px;
-	background-color: transparent;
-	border: 1px solid rgb(128 200 218);
-	border-radius: 5px;
-}
-
-.progressbar__item {
-	background-color: transparent;
-	transition: .5s;
-}
-.progressbar__item-fill {
-	background-color: rgb(128 200 218);
 }

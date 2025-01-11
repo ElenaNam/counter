@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { Tablo } from './Tablo';
+import { ProgressBar  } from './ProgressBar ';
 
-export const Counter = () => {
+export const CounterWithProgressBar = () => {
 	const minCount = 0
 	const maxCount = 5
 	const [counter, setCounter] = useState<number>(minCount)
@@ -16,7 +17,7 @@ export const Counter = () => {
 	}
 
 	useEffect(() => {
-		let counterAsString = localStorage.getItem('simpleCounterValue');
+		let counterAsString = localStorage.getItem('counterWithProgressBarValue');
 		if (counterAsString) {
 			let newCounter = JSON.parse(counterAsString);
 			setCounter(newCounter);
@@ -24,7 +25,7 @@ export const Counter = () => {
 	}, [])
 
 	useEffect(() => {
-		localStorage.setItem('simpleCounterValue', JSON.stringify(counter))
+		localStorage.setItem('counterWithProgressBarValue', JSON.stringify(counter))
 	}, [counter])
 
 	return (
@@ -33,6 +34,7 @@ export const Counter = () => {
 				value={counter} 
 				warning={counter === maxCount} 
 			/>
+			<ProgressBar count={maxCount} value={counter} />
 
 			<div className='counter__control'>
 				<Button 
