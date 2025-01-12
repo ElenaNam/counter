@@ -31,13 +31,10 @@ export const CounterWithSettings = () => {
 		let valuesAsString = localStorage.getItem('valuesSettings');
 		if (valuesAsString) {
 			let newValues = JSON.parse(valuesAsString);
-			console.log(newValues)
 			setCounter(newValues.startValue.value);
 			setMaxValue(newValues.maxValue.value);
 		}
-	}, [counter, maxValue])
-
-
+	}, [])
 
 	return (
 		<Grid2 container spacing={6} columns={12} >

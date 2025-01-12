@@ -36,7 +36,7 @@ export const Counter = ({id, msg, alert, startValue, maxValue} : CounterPropsTyp
 	}, [counter])
 
 	useEffect(() => {
-		if(startValue) {
+		if(startValue || startValue === 0) {
 			setMinCount(startValue)
 			setCounter(startValue)
 		}
