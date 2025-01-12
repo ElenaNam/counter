@@ -38,9 +38,9 @@ export const SettingsBlock = ({setMsg, alert, getValues} : SettingsBlockPropsTyp
 	}, [values])
 
 	const getValuesHandler = () => {
-		console.log('click')
 		setMsg(null, false)
 		getValues(values.startValue.value, values.maxValue.value)
+		setIsSetDisabled(true)
 	}
 
 	const changeStartValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,7 +57,7 @@ export const SettingsBlock = ({setMsg, alert, getValues} : SettingsBlockPropsTyp
 			setIsError(true)
 			setIsSetDisabled(true)
 		} else {
-			setValues({...values, startValue: {value: val, isError: false}})
+			setValues({...values, startValue: {value: val, isError: false}, maxValue: {...values.maxValue, isError: values.maxValue.value < 0 ? true : false}})
 			setMsg("enter values and press 'set'", false)
 			setIsError(false)
 			setIsSetDisabled(false)
@@ -78,7 +78,7 @@ export const SettingsBlock = ({setMsg, alert, getValues} : SettingsBlockPropsTyp
 			setIsError(true)
 			setIsSetDisabled(true)
 		} else {
-			setValues({...values, maxValue: {value: val, isError: false}})
+			setValues({...values, maxValue: {value: val, isError: false}, startValue: {...values.startValue, isError: values.startValue.value >= 0 ? false : true}})
 			setMsg("enter values and press 'set'", false)
 			setIsError(false)
 			setIsSetDisabled(false)
